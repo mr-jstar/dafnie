@@ -7,20 +7,27 @@ The project contains the following files:
 
 1) *.c and *.h are source files of the application.
 
-2) Makefile for a gnumake under Linux od Unix. It will buld an executable dafnie.exe (the default target)
+2) Makefile for gnumake under Linux od Unix. It will buld an executable eldevol (the default target)
    or a tester for skeved random number generator. To test the ececutable run 'make test'.
 
 3) ELDevol324.exe is Windows executable file that simulates competition betwen organisms.
-   The executable file requires configuration program with the tested parameters. The program saves results in
-   two text (CSV) files.
-   The first (more usefull) contains contains mean values and statistics calculated upon the raw data
-   in the second file.
-   The second file stores raw results of the simulations (generation by generation - beware generate
-   large data files).
+   The program requires a configuration file with the tested parameters.
+   The program saves results in two text (CSV) files:
+    - the first (more usefull) contains contains mean values and statistics calculated upon
+      the raw data in the second file.
+    - the second file stores raw results of the simulations (generation by generation:
+
    To make simulation, typically place the simulation file ELDevol324.exe in the same directory as the config file.
 
-4) config324.txt contains the following parameters used during simulations:
+   -----------------------------------------------
 
+   The syntax to run the simulation under Windows in the console:
+
+      ELDevol324.exe config324.txt name_of_the_file_containing_statistics.csv name_of_the_raw_data_file.csv
+
+   -----------------------------------------------
+
+4) config324.txt contains the following parameters used during simulations:
 
 n_experiments                 = 1000 # the number of experiments to run
 n_seasons                     = 5000 # the number of generations during each run
@@ -38,31 +45,9 @@ procreation_prob              = 1 # procreation probability at nonlimiting food 
 mutation_prob                 = 0.00001 # mutation probability of the dormancy parameters (min, max length of diapause)
 mutation_delta                = 0.02 
 strategy_length_delta         = 1 # step of possible mutations
-envinronment_capacity         = 500 # K- mean carrying capacity of the habitat during the tests 
-envinronment_variability      = 500  # the mean range of the possible variation of the K 
+envinronment_capacity         = 500 # expected value of environmental capacity
+envinronment_variability      = 500  # value of 1 standard deviation of environmental variability
 variability_skew              = 0    # skew of env. capacity distribution, where 0 means symetric distribution
 
-5) config (without an extension) is another sample configuration file.
-
-6) readme file  - the information file you are reading presently
-
------------------------------------------------
-
-The syntax to run the simulation under Windows in the console:
-
-ELDevol324.exe config324.txt name_of_the_file_containing_statistics.csv name_of_the_raw_data_file.csv
-
------------------------------------------------
-
-Remarks: the program was originally written under Linux. 
-
-Usage: ./dafnie (<opts> | -h )
-    -h - print this help and exit
-
-    <opts> = [ config-file [ stat-file ] [ log-file ] ]
-    config-file - see example config
-    stat-file   - global statistics goes there (in csv format)
-                  stat-file defaults to stdout
-    log-file    - program log goes there (csv format is used if file name ends with "csv")
-                  log is made only if a log-file is given in the argument list.
+5) readme file  - the information file you are reading presently
 
