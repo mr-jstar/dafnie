@@ -1,4 +1,4 @@
-The program simulates competition betwen organisms (showing various life strategies
+The program simulates competition between organisms (showing various life strategies
    that differ in diapause length distribution) competing for limited resources
    that vary stochastically from generation to generation.
 
